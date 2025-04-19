@@ -1,8 +1,8 @@
 crewai
 crewai-tools
-browser_use
 asyncio
 python-dotenv
 langchain_google_genai
 Flask
+flask-cors
 gunicorn

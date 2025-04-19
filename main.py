@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from doctor_ai.crew import AIDoctorAssistant
 from datetime import datetime
 import os
