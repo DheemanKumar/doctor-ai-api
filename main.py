@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+from fastapi.middleware.cors import CORSMiddleware
 from doctor_ai.crew import AIDoctorAssistant
 from datetime import datetime
 import os
@@ -11,6 +11,17 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or limit it to your frontend domain
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 @app.route("/run-diagnosis", methods=["POST"])
