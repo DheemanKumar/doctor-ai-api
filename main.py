@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from fastapi.middleware.cors import CORSMiddleware
+from flask_cors import CORS
 from doctor_ai.crew import AIDoctorAssistant
 from datetime import datetime
 import os
@@ -12,13 +12,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # or limit it to your frontend domain
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+CORS(app)
 
 
 
