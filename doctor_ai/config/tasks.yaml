@@ -1,0 +1,27 @@
+first_aid_prescriber_task:
+  description: >
+    Analyze the patient's health report or described condition and prescribe immediate first aid.
+    Ensure that the first aid aligns with the reported symptoms or condition severity.
+  expected_output: >
+    A clearly defined first aid procedure or action steps the patient can take immediately,
+    including warnings if professional help is urgently required.
+  agent: first_aid_prescriber_agent
+
+hospital_locator_task:
+  description: >
+    Search for all nearby hospitals or personal clinics based on the patient's provided location.
+    Prioritize options based on distance and availability.
+  expected_output: >
+    A list of the top nearby hospitals and clinics including name, address, contact number, distance,
+    and availability if known.
+  agent: hospital_locator_agent
+
+dietary_plan_task:
+  description: >
+    Create a dietary plan for the patient based on the provided condition or diagnosis.
+    Make sure the meal plan is balanced, condition-specific, and easy to follow.
+  expected_output: >
+    A condition-specific daily dietary plan including meal suggestions and general nutritional advice.
+  agent: dietary_plan_agent
+
+
